@@ -14,3 +14,15 @@ function bs_brother_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'bs_brother_widgets_init' );
+
+function bs_brother_widgets_language_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Language', 'bs-brother' ),
+		'id'            => 'sidebar-1',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+}
+add_action( 'widgets_init', 'bs_brother_widgets_language_init' );

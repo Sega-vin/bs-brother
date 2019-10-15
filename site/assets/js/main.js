@@ -29,25 +29,17 @@ $(function () {
 	changeFormBg();
 
 	let toggleLanguageMenu = function () {
-		let language = $('#js-language');
-
 		$('#js-language__title').on('click', function (e) {
 			e.preventDefault();
 			if(!$(this).hasClass('active')){
 				$(this).addClass('active')
-				$('#js-language__list').show();
+				$('#js-language .list').show();
 			}else{
 				$('#js-language__title').removeClass('active');
-				$('#js-language__list').hide();
+				$('#js-language .list').hide();
 			}
 
 		});
-		// language.hover(function () {
-		// 	$('#js-language__title').addClass('active');
-		// }, function () {
-		// 	$('#js-language__title').removeClass('active');
-		// 	$('#js-language__list').hide();
-		// });
 	};
 	toggleLanguageMenu();
 
@@ -113,17 +105,4 @@ $(function () {
 		});
 	};
 	slider();
-
-});
-
-
-
-er').slick('slickPrev');
-    });
-    $('.slider-wrap .slider-right').on('click', function (e) {
-      $('#js-slider').slick('slickNext');
-    });
-  };
-
-  slider();
 });
