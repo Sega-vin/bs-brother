@@ -191,11 +191,11 @@ Industrial sewing machines and garment printer made by Brother" href="industrial
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/respond.min.js"></script>
 <!--<![endif]-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/jquery-easy-scroll/jquery.easeScroll.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/tooltipster/tooltipster.main.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/slick/slick/slick.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/site/assets/js/main.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/jquery-easy-scroll/jquery.easeScroll.js"></script>-->
+<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/tooltipster/tooltipster.main.min.js"></script>-->
+<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/slick/slick/slick.min.js"></script>-->
+<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/js/main.min.js"></script>-->
 <?php wp_footer(); ?>
 </body>
 </html>
