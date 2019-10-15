@@ -38,7 +38,6 @@ $(function () {
 				$('#js-language__title').removeClass('active');
 				$('#js-language .list').hide();
 			}
-
 		});
 	};
 	toggleLanguageMenu();

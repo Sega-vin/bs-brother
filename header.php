@@ -16,8 +16,8 @@
         <div class="logo"><?php the_custom_logo(); ?></div>
         <div class="main-header__data">
             <ul class="main-header__links">
-                <li><a href="http://www.brother.eu/">Europe</a></li>
-                <li><a href="http://www.brother.com/brgnet/">Global Network</a></li>
+                <li><a href="<?php echo carbon_get_theme_option('crb_header_search_europe_link'); ?>"><?php echo carbon_get_theme_option('crb_header_search_europe_title'.get_lang()); ?></a></li>
+                <li><a href="<?php echo carbon_get_theme_option('crb_header_search_global_link'); ?>"><?php echo carbon_get_theme_option('crb_header_search_global_title'.get_lang()); ?></a></li>
             </ul>
             <div class="search-form" id="js-search-form">
                 <input type="text" name="search">
