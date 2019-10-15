@@ -2,10 +2,10 @@
 
 if (!defined('ABSPATH')) exit;
 
-require_once __DIR__.'inc/func.php';
-require_once __DIR__.'inc/bs-setup.php';
-require_once __DIR__.'inc/bs-widgets.php';
-require_once __DIR__.'inc/bs-styles.php';
+require_once __DIR__.'/inc/func.php';
+require_once __DIR__.'/inc/bs-setup.php';
+require_once __DIR__.'/inc/bs-widgets.php';
+require_once __DIR__.'/inc/bs-styles.php';
 
 function bs_brother_content_width() {
 	// This variable is intended to be overruled from themes.
