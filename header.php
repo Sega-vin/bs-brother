@@ -30,13 +30,23 @@
             <div class="sandwitch__line sandwitch__line--middle"></div>
             <div class="sandwitch__line sandwitch__line--bottom"></div>
         </div>
-        <ul class="main-menu" id="js-main-menu">
-            <li><a href="products.html">Products</a></li>
-            <li><a href="where-to-buy.html">Where to buy</a></li>
-            <li><a href="spare-parts.html">Spare Parts</a></li>
-            <li><a href="about-brother.html">About Brother</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <?php wp_nav_menu([
+	        'theme_location'  => 'menu-1',
+	        'menu'            => '',
+	        'container'       => '',
+	        'container_class' => '',
+	        'container_id'    => '',
+	        'menu_class'      => 'main-menu',
+	        'menu_id'         => 'js-main-menu',
+	        'echo'            => true,
+	        'fallback_cb'     => 'wp_page_menu',
+	        'before'          => '',
+	        'after'           => '',
+	        'link_before'     => '',
+	        'link_after'      => '',
+	        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+	        'depth'           => 0,
+	        'walker'          => '',        ]); ?>
         <div class="language" id="js-language"><a class="language__title" href="#" id="js-language__title">Language</a>
             <?php if(!dynamic_sidebar('language')): ?>
                 <p>Add language widget here</p>
