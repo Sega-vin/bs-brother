@@ -16,6 +16,8 @@ if ( ! function_exists( 'bs_brother_setup' ) ) :
 // This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'bs-brother' ),
+			'menu-footer-info' => esc_html__( 'Menu footer info', 'bs-brother' ),
+			'menu-about' => esc_html__( 'Menu about', 'bs-brother' ),
 		) );
 
 		add_theme_support( 'html5', array(

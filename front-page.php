@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="blocks">
-    <a class="blocks__item" href="<?php echo get_page_link(45); ?>">
+    <a class="blocks__item" href="<?php echo get_page_link( 45 ); ?>">
 		<?php $page_sewing = new WP_Query( [
 			'page_id' => 45
 		] ); ?>
@@ -52,7 +52,7 @@
 			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
     </a>
-    <a class="blocks__item" href="<?php echo get_page_link(49); ?>">
+    <a class="blocks__item" href="<?php echo get_page_link( 49 ); ?>">
 		<?php $page_garment = new WP_Query( [
 			'page_id' => 49
 		] ); ?>
@@ -78,7 +78,7 @@
 		<?php endif; ?>
 
     </a>
-    <a class="blocks__item" href="<?php echo get_page_link(55); ?>">
+    <a class="blocks__item" href="<?php echo get_page_link( 55 ); ?>">
 		<?php $newsletter = new WP_Query( [
 			'p' => 55
 		] ); ?>
@@ -105,71 +105,54 @@
     </a>
 </div>
 <div class="big-links">
-    <?php $links_block = carbon_get_theme_option('crb_link_block'); ?>
-    <?php foreach($links_block as $link): ?>
-        <a class="big-links__item" href="<?php echo get_page_link($link['id']); ?>">
+	<?php $links_block = carbon_get_theme_option( 'crb_link_block' ); ?>
+	<?php foreach ( $links_block as $link ): ?>
+        <a class="big-links__item" href="<?php echo get_page_link( $link['id'] ); ?>">
             <img src="<?php echo $link['image']; ?>" alt="">
         </a>
-    <?php endforeach; ?>
+	<?php endforeach; ?>
 </div>
 <div class="events">
     <div class="events__line"></div>
     <div class="events__body">
         <header class="events__header">
+			<?php $event = get_category( 17 ); ?>
             <a class="tooltip events__link" title="X-Fair Wien"
-               href="https://www.brother-ism.com/about-brother/events.html">Events
-            </a>
+               href="<?php echo get_category_link( $event->term_id ); ?>"><?php echo $event->name; ?></a>
         </header>
+
+		<?php
+		$event_posts = new WP_Query( [
+			'category_name'  => 'events',
+			'posts_per_page' => - 1,
+            'order' => 'ASC'
+		] );
+		?>
+
         <div class="events__content">
-            <div class="events__item">
-                <a class="tooltip events__img" title="X-Fair Wien"
-                   href="https://www.brother-ism.com/about-brother/events/article/x-fair-wien.html">
-                    <img
-                            src="<?php echo get_template_directory_uri(); ?>/site/assets/i/events/1.jpg" alt="">
-                </a>
-                <div class="events__text">
-                    <header class="events__item-header">
-                        <div class="events__time">08.10.2019 - 10.10.2019</div>
-                        <h4 class="events__title">
-                            <a class="tooltip" title="X-Fair Wien"
-                               href="https://www.brother-ism.com/about-brother/events/article/x-fair-wien.html">X-Fair
-                                Wien
-                            </a>
-                        </h4>
-                    </header>
-                    <div class="events__text">X-Fair is the international Print & Crossmedia Show for Austria and
-                        CEE....
-                        <a title="X-Fair Wien" class="tooltip"
-                           href="https://www.brother-ism.com/about-brother/events/article/x-fair-wien.html">Read more
+			<?php if ( $event_posts->have_posts() ): ?>
+				<?php while ( $event_posts->have_posts() ): ?>
+					<?php $event_posts->the_post(); ?>
+                    <div class="events__item">
+                        <a class="tooltip events__img" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail('full'); ?>
                         </a>
+                        <div class="events__text">
+                            <header class="events__item-header">
+                                <div class="events__time"><?php echo carbon_get_the_post_meta('crb_data_events'); ?></div>
+                                <h4 class="events__title">
+                                    <a class="tooltip" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                </h4>
+                            </header>
+                            <div class="events__text"><?php echo carbon_get_the_post_meta('crb_short_text'.get_lang()); ?></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="events__item">
-                <a class="tooltip events__img" title="Viscom Italia 2019"
-                   href="https://www.brother-ism.com/about-brother/events/article/viscom-italia-2019.html">
-                    <img
-                            src="<?php echo get_template_directory_uri(); ?>/site/assets/i/events/2.jpg" alt="">
-                </a>
-                <div class="events__text">
-                    <header class="events__item-header">
-                        <div class="events__time">08.10.2019 - 10.10.2019</div>
-                        <h4 class="events__title">
-                            <a class="tooltip" title="Viscom Italia 2019"
-                               href="https://www.brother-ism.com/about-brother/events/article/viscom-italia-2019.html">
-                                Viscom Italia 2019
-                            </a>
-                        </h4>
-                    </header>
-                    <div class="events__text">Viscom Italia is here to best meet all your needs, actively listen to
-                        your....
-                        <a title="Viscom Italia 2019" class="tooltip"
-                           href="https://www.brother-ism.com/about-brother/events/article/viscom-italia-2019.html">Read
-                            more
-                        </a>
-                    </div>
-                </div>
-            </div>
+				<?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+			<?php else: ?>
+			<?php endif; ?>
         </div>
     </div>
     <div class="events__line events__line--bottom"></div>

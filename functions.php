@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) exit;
 
 require_once __DIR__.'/inc/carbon-fields/cb.php';
 require_once __DIR__.'/inc/carbon-fields/cb-page.php';
+require_once __DIR__.'/inc/carbon-fields/cb-post-event.php';
 
 require_once __DIR__.'/inc/func.php';
 require_once __DIR__.'/inc/bs-setup.php';

@@ -1,75 +1,163 @@
 <div class="main-footer">
+    <!--    menu-footer-info-->
     <div class="main-footer__item">
-        <ul class="main-footer__list main-footer__list--border-bottom">
-            <li><a class="tooltip" title="Company Details" href="contact.html">Company Details</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="term-of-use.html">Terms of use</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="sitemap.html">Sitemap</a></li>
-            <li><a class="tooltip" title="Contact" href="https://www.brother-ism.com/privacy-policy.html">Contact</a></li>
-        </ul>
+		<?php wp_nav_menu( [
+			'theme_location'  => 'menu-footer-info',
+			'menu'            => '',
+			'container'       => '',
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => 'main-footer__list main-footer__list--border-bottom',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => '',
+		] ); ?>
+        <!--            Blocks - Footer Facebook-->
         <ul class="main-footer__socials flex">
-            <li><a class="tooltip" title="" href="https://www.youtube.com/user/Brotherindustrial"><img src="<?php echo get_template_directory_uri(); ?>/site/assets/i/youtube.png" alt=""></a></li>
-            <li><a class="tooltip" title="" href="https://www.instagram.com/brothergtseries/"><img src="<?php echo get_template_directory_uri(); ?>/site/assets/i/Instagram_Logo_square.png" alt=""></a></li>
+			<?php $footer_socials = carbon_get_theme_option( 'crb_footer_socials' ); ?>
+			<?php foreach ( $footer_socials as $item ): ?>
+                <li>
+                    <a class="tooltip" title="" href="<?php echo $item['link']; ?>">
+                        <img src="<?php echo $item['image']; ?>" alt="">
+                    </a>
+                </li>
+			<?php endforeach; ?>
         </ul>
+        <!--            Blocks - Footer social-->
         <ul class="main-footer__socials">
-            <li><a class="tooltip" title="" href="https://www.facebook.com/brothergt/"><img src="<?php echo get_template_directory_uri(); ?>/site/assets/i/Facebook_Logo_square.png" alt=""><span>Industrial Printing</span></a></li>
-            <li><a class="tooltip" title="" href="https://www.facebook.com/brotherindustrialsewing/"><img src="<?php echo get_template_directory_uri(); ?>/site/assets/i/Facebook_Logo_square.png" alt=""><span>Industrial Sewing</span></a></li>
+			<?php $footer_socials_facebook = carbon_get_theme_option( 'crb_footer_socials_facebook' ); ?>
+			<?php foreach ( $footer_socials_facebook as $item ): ?>
+                <li>
+                    <a class="tooltip" title="" href="<?php echo $item['link']; ?>">
+                        <img src="<?php echo $item['image']; ?>" alt="">
+                        <span><?php echo $item[ 'crb_footer_social_text' . get_lang() ]; ?></span>
+                    </a>
+                </li>
+			<?php endforeach; ?>
         </ul>
     </div>
     <div class="main-footer__item">
-        <h3 class="main-footer__title">Products</h3>
+		<?php $products_page = new WP_Query( [ 'page_id' => 13 ] ); ?>
+		<?php if ( $products_page->have_posts() ): ?>
+			<?php $products_page->the_post(); ?>
+            <h3 class="main-footer__title"><?php the_title(); ?></h3>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
         <ul class="main-footer__list">
-            <li><a class="tooltip" title="Take a look at Brother´s wide range of industrial sewing machines." href="industrial-sewing-machines.html">Industrial Sewing Machines</a></li>
-            <li><a class="tooltip" title="Brother´s GT-3 Garment Printer.
-DTG printing on t-shirts, jeans, shoes e.g.!
-Industrial sewing machines and garment printer made by Brother" href="industrial-garment-printers.html">Industrial Garment Printers</a></li>
+            <li>
+				<?php $product_page_sewing = new WP_Query( [ 'page_id' => 45 ] ); ?>
+				<?php if ( $product_page_sewing->have_posts() ): ?>
+					<?php $product_page_sewing->the_post(); ?>
+                    <a class="tooltip"
+                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
+                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+            </li>
+            <li>
+				<?php $product_page_sewing = new WP_Query( [ 'page_id' => 49 ] ); ?>
+				<?php if ( $product_page_sewing->have_posts() ): ?>
+					<?php $product_page_sewing->the_post(); ?>
+                    <a class="tooltip"
+                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
+                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
+            </li>
         </ul>
-        <h3 class="main-footer__title">Where to buy</h3>
+		<?php $products_page = new WP_Query( [ 'page_id' => 16 ] ); ?>
+		<?php if ( $products_page->have_posts() ): ?>
+			<?php $products_page->the_post(); ?>
+            <h3 class="main-footer__title"><?php the_title(); ?></h3>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+
         <ul class="main-footer__list">
-            <li><a class="tooltip" title="Industrial sewing machines and garment printer made by Brother." href="where-to-buy-industrial.html">Industrial Sewing Machine</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and garment printer made by Brother." href="where-to-buy-industrial.html">Industrial Garment Printers</a></li>
+            <li>
+	            <?php $product_page_sewing = new WP_Query( [ 'page_id' => 107 ] ); ?>
+	            <?php if ( $product_page_sewing->have_posts() ): ?>
+		            <?php $product_page_sewing->the_post(); ?>
+                    <a class="tooltip"
+                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
+                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		            <?php wp_reset_postdata(); ?>
+	            <?php endif; ?>
+            </li>
+            <li>
+	            <?php $product_page_sewing = new WP_Query( [ 'page_id' => 112 ] ); ?>
+	            <?php if ( $product_page_sewing->have_posts() ): ?>
+		            <?php $product_page_sewing->the_post(); ?>
+                    <a class="tooltip"
+                       title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
+                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		            <?php wp_reset_postdata(); ?>
+	            <?php endif; ?>
+            </li>
         </ul>
     </div>
     <div class="main-footer__item">
-        <h3 class="main-footer__title">Spare parts</h3>
+	    <?php $products_page = new WP_Query( [ 'page_id' => 19 ] ); ?>
+	    <?php if ( $products_page->have_posts() ): ?>
+		    <?php $products_page->the_post(); ?>
+            <h3 class="main-footer__title"><?php the_title(); ?></h3>
+		    <?php wp_reset_postdata(); ?>
+	    <?php endif; ?>
         <ul class="main-footer__list">
-            <li><a class="tooltip" title="Industrial Sewing Machines" href="https://partsbook.brother.co.jp/public/pub/index/index/en">Industrial Sewing Machines</a></li>
-            <li><a class="tooltip" title="Industrial Garment Printers" href="https://partsbook.brother.co.jp/public/gt/index/index/en">Industrial Garment Printers</a></li>
+            <?php $spare_parts = carbon_get_theme_option('crb_spare_parts'); ?>
+            <?php foreach($spare_parts as $item): ?>
+                <li>
+                    <a class="tooltip" title="<?php echo $item['title'.get_lang()]; ?>" href="<?php echo $item['link']; ?>"><?php echo $item['title'.get_lang()]; ?></a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
     <div class="main-footer__item">
-        <h3 class="main-footer__title">About</h3>
-        <ul class="main-footer__list">
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="anti-slavery-and-human-trafficking-statement.html">Anti-Slavery and Human</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="anti-slavery-and-human-trafficking-statement.html">Trafficking Statement</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="philosophy.html">Philosophy</a></li>
-            <li><a class="tooltip" title="Environment" href="environment.html">Environment</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="press.html">Trafficking Statement</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="events.html">Events</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="career.html">Career</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="newsletter.html">Newsletter</a></li>
-            <li><a class="tooltip" title="Industrial sewing machines and DTG garment printer made by Brother." href="brother-support-app.html">Brother Support App</a></li>
-        </ul>
+<!--        Translate - Title-->
+        <h3 class="main-footer__title"><?php echo carbon_get_theme_option('crb_about_footer_title'.get_lang()); ?></h3>
+        <?php wp_nav_menu( [
+        	'theme_location'  => 'menu-about',
+        	'menu'            => '',
+        	'container'       => '',
+        	'container_class' => '',
+        	'container_id'    => '',
+        	'menu_class'      => 'main-footer__list',
+        	'menu_id'         => '',
+        	'echo'            => true,
+        	'fallback_cb'     => 'wp_page_menu',
+        	'before'          => '',
+        	'after'           => '',
+        	'link_before'     => '',
+        	'link_after'      => '',
+        	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        	'depth'           => 0,
+        	'walker'          => '',
+        ] ); ?>
     </div>
     <div class="main-footer__item">
-        <h3 class="main-footer__title">Links</h3>
+<!--        Translate - Titles - Footer links-->
+        <h3 class="main-footer__title"><?php echo carbon_get_theme_option('crb_footer_links_title'.get_lang()); ?></h3>
         <ul class="main-footer__list">
-            <li><a class="tooltip" title="solutions for office and home" href="http://www.brother.com/html/europe/index.htm">solutions for office and home</a></li>
+            <li>
+                <a class="tooltip" title="<?php echo carbon_get_theme_option('crb_footer_links_title'.get_lang()); ?>" href="<?php echo carbon_get_theme_option('crb_footer_links_link'); ?>"><?php echo carbon_get_theme_option('crb_footer_links_text'.get_lang()); ?></a>
+            </li>
         </ul>
     </div>
 </div>
-<div class="copyright">© 2019 Brother Internationale Industriemaschinen GmbH</div>
+<div class="copyright"><?php echo carbon_get_theme_option('crb_copyright'.get_lang()); ?></div>
 </div><!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/es5-shim.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/html5shiv.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/respond.min.js"></script>
 <!--<![endif]-->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/jquery-easy-scroll/jquery.easeScroll.js"></script>-->
-<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/tooltipster/tooltipster.main.min.js"></script>-->
-<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/libs/slick/slick/slick.min.js"></script>-->
-<!--<script src="--><?php //echo get_template_directory_uri(); ?><!--/site/assets/js/main.min.js"></script>-->
 <?php wp_footer(); ?>
 </body>
 </html>
