@@ -31,18 +31,22 @@
 				'posts_per_page' => - 1
 			] ); ?>
 
+
 			<?php if ( $sewing_pattern_machine->have_posts() ): ?>
-				<?php $sewing_pattern_machine->the_post(); ?>
-                <div class="products-items__item">
-                    <div class="products-items__img"><?php echo kama_thumb_img( 'w=191 &h=146' ); ?></div>
-                    <div class="products-items__content">
-                        <h3 class="products-items__title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-                        <p class="products-items__text"><?php echo carbon_get_the_post_meta('crb_model_short_text'.get_lang()); ?></p>
-                        <a class="products-items__link" href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option('crb_more_info'.get_lang()); ?></a>
+				<?php while ( $sewing_pattern_machine->have_posts() ): ?>
+					<?php $sewing_pattern_machine->the_post(); ?>
+                    <div class="products-items__item">
+                        <div class="products-items__img"><?php echo kama_thumb_img( 'w=191 &h=146' ); ?></div>
+                        <div class="products-items__content">
+                            <h3 class="products-items__title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h3>
+                            <p class="products-items__text"><?php echo carbon_get_the_post_meta( 'crb_model_short_text' . get_lang() ); ?></p>
+                            <a class="products-items__link"
+                               href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option( 'crb_more_info' . get_lang() ); ?></a>
+                        </div>
                     </div>
-                </div>
+				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
         </div>
@@ -239,3 +243,4 @@
     </div>
 </div>
 <?php get_footer(); ?>
+
