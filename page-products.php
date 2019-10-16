@@ -16,8 +16,7 @@
 			] ); ?>
 			<?php if ( $page_sewing->have_posts() ): ?>
 				<?php $page_sewing->the_post(); ?>
-                <div class="blocks__image-bg"
-                     style="background-image: url('<?php echo get_template_directory_uri(); ?>/site/assets/i/blocks/1.jpg')"></div>
+                <div class="blocks__image-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/site/assets/i/blocks/1.jpg')"></div>
                 <div class="blocks__content">
                     <header class="blocks__content-header">
                         <img class="blocks__image_show"

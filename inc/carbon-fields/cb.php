@@ -111,11 +111,20 @@ function crb_attach_theme_options() {
 	Container::make( 'theme_options', 'Translate' )
 	         ->set_page_parent( $basic_options_container )// reference to a top level container
 	         ->add_tab( __( 'Buttons' ), array(
+			Field::make( 'separator', 'crb_read_more_separator', __( 'Read_more' ) ),
 			Field::make( 'text', 'crb_read_more_ro', __( 'crb_read_more_ro' ) )
 			     ->set_width( 30 ),
 			Field::make( 'text', 'crb_read_more_ru', __( 'crb_read_more_ru' ) )
 			     ->set_width( 30 ),
 			Field::make( 'text', 'crb_read_more_en', __( 'crb_read_more_en' ) )
+			     ->set_width( 30 ),
+
+			Field::make( 'separator', 'crb_more_info_separator', __( 'More information' ) ),
+			Field::make( 'text', 'crb_more_info_ro', __( 'crb_more_info_ro' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_more_info_ru', __( 'crb_more_info_ru' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_more_info_en', __( 'crb_more_info_en' ) )
 			     ->set_width( 30 ),
 		) )
 	         ->add_tab( __( 'Titles' ), array(
