@@ -119,6 +119,14 @@ function crb_attach_theme_options() {
 			Field::make( 'text', 'crb_read_more_en', __( 'crb_read_more_en' ) )
 			     ->set_width( 30 ),
 
+			Field::make( 'separator', 'crb_update_button_separator', __( 'Update' ) ),
+			Field::make( 'text', 'crb_update_button_ro', __( 'crb_update_button_ro' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_update_button_ru', __( 'crb_update_button_ru' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_update_button_en', __( 'crb_update_button_en' ) )
+			     ->set_width( 30 ),
+
 			Field::make( 'separator', 'crb_more_info_separator', __( 'More information' ) ),
 			Field::make( 'text', 'crb_more_info_ro', __( 'crb_more_info_ro' ) )
 			     ->set_width( 30 ),
@@ -142,6 +150,15 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_footer_links_title_ru', __( 'crb_footer_links_title_ru' ) )
 		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_footer_links_title_en', __( 'crb_footer_links_title_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'separator', 'crb_single_product_banner_sep', __( 'Single product banner title' ) ),
+
+		         Field::make( 'text', 'crb_single_product_banner_title_ro', __( 'crb_single_product_banner_title_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_single_product_banner_title_ru', __( 'crb_single_product_banner_title_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_single_product_banner_title_en', __( 'crb_single_product_banner_title_en' ) )
 		              ->set_width( 30 ),
 
 		         Field::make( 'text', 'crb_footer_links_text_ro', __( 'crb_footer_links_text_ro' ) )

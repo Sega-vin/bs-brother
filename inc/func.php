@@ -87,14 +87,14 @@ function showProductsBlocks($term_id, $taxonomy_model){
 			$html .= '</div>';
 			$html .= '<div class="products-items__content">';
 			$html .= '<h3 class="products-items__title">';
-			$html .= '<a href="<?php echo get_the_permalink(); ?>">';
+			$html .= '<a href="'.get_the_permalink().'">';
 			$html .= get_the_title();
 			$html .= '</a>';
 			$html .= '</h3>';
 			$html .= '<p class="products-items__text">';
 			$html .= carbon_get_the_post_meta( 'crb_model_short_text'.get_lang() );
 			$html .= '</p>';
-			$html .= '<a class="products-items__link" href="<?php the_permalink(); ?>">';
+			$html .= '<a class="products-items__link" href="'. get_the_permalink().'">';
 			$html .= carbon_get_theme_option( 'crb_more_info' . get_lang() );
 			$html .= '</a>';
 			$html .= '</div></div>';
