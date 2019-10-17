@@ -59,3 +59,49 @@ function getThePostThumbSrc($width, $height) {
 }
 
 add_filter('wp_revisions_to_keep', 'my_revisions_to_keep');
+
+/**
+ * @param $term_id
+ * @param $taxonomy_model taxonomy model slug
+ */
+function showProductsBlocks($term_id, $taxonomy_model){
+	$machine_term = get_term( $term_id );
+	$html = '<h2 class="products-items__header">';
+	echo $machine_term->name;
+	$html .= '</h2>';
+
+	$html .= '<div class="products-items__grid">';
+
+	$machine = new WP_Query( [
+		'post_type'      => 'product',
+		'model'          => $taxonomy_model,
+		'posts_per_page' => - 1
+	] );
+
+	if ( $machine->have_posts() ){
+		while($machine->have_posts()){
+			$machine->the_post();
+			$html .= '<div class="products-items__item">';
+			$html .= '<div class="products-items__img">';
+			$html .=  kama_thumb_img( 'w=191 &h=146' );
+			$html .= '</div>';
+			$html .= '<div class="products-items__content">';
+			$html .= '<h3 class="products-items__title">';
+			$html .= '<a href="<?php echo get_the_permalink(); ?>">';
+			$html .= get_the_title();
+			$html .= '</a>';
+			$html .= '</h3>';
+			$html .= '<p class="products-items__text">';
+			$html .= carbon_get_the_post_meta( 'crb_model_short_text'.get_lang() );
+			$html .= '</p>';
+			$html .= '<a class="products-items__link" href="<?php the_permalink(); ?>">';
+			$html .= carbon_get_theme_option( 'crb_more_info' . get_lang() );
+			$html .= '</a>';
+			$html .= '</div></div>';
+		}
+		wp_reset_postdata();
+	}
+
+	$html .= '</div>';
+	echo $html;
+}
