@@ -21,6 +21,10 @@
     <li><?php the_title(); ?></li>
 </ul>
 <section class="section grid padding-right">
+    <?php $taxonomy_product = get_the_terms(get_the_ID(), 'model')[0]->slug; ?>
+
+    <?php vardump($taxonomy_product); ?>
+
     <aside class="sidebar">
 		<?php $products = new WP_Query( [
 			'post_type'      => 'product',

@@ -1526,6 +1526,11 @@ a.pdf span {
   background: linear-gradient(#0059AE, #033E80);
 }
 
+.products-items__link:hover,
+.products-items__link:visited {
+  color: white;
+}
+
 .where-to-buy__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
