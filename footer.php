@@ -73,6 +73,7 @@
 				<?php endif; ?>
             </li>
         </ul>
+
 		<?php $products_page = new WP_Query( [ 'page_id' => 16 ] ); ?>
 		<?php if ( $products_page->have_posts() ): ?>
 			<?php $products_page->the_post(); ?>
@@ -87,7 +88,7 @@
 		            <?php $product_page_sewing->the_post(); ?>
                     <a class="tooltip"
                        title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
-                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                       href="<?php the_permalink(); ?>"><?php echo carbon_get_the_post_meta('crb_where_to_buy_title'.get_lang()); ?></a>
 		            <?php wp_reset_postdata(); ?>
 	            <?php endif; ?>
             </li>
@@ -97,7 +98,7 @@
 		            <?php $product_page_sewing->the_post(); ?>
                     <a class="tooltip"
                        title="<?php echo carbon_get_the_post_meta( 'crb_product_page_link_title' . get_lang() ); ?>"
-                       href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                       href="<?php the_permalink(); ?>"><?php echo carbon_get_the_post_meta('crb_where_to_buy_title'.get_lang()); ?></a>
 		            <?php wp_reset_postdata(); ?>
 	            <?php endif; ?>
             </li>

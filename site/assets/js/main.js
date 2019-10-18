@@ -104,4 +104,18 @@ $(function () {
 		});
 	};
 	slider();
+
+	let tabs = function () {
+		$('#js-tabs .tabs__title:first-child').show();
+		$('#js-tabs .tabs__title').on('click', function () {
+			let dataTitle = $(this).attr('data-tab');
+
+			$('#js-tabs .tabs__title').removeClass('active');
+			$(this).addClass('active');
+
+			$('#js-tabs .tabs__item').hide();
+			$('#js-tabs .tabs__content .tabs__item[data-tab="'+dataTitle+'"]').show();
+		});
+	};
+	tabs();
 });

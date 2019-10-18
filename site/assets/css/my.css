@@ -1287,6 +1287,9 @@ a.pdf span {
   padding: 5px 0 5px 20px;
 }
 .sidebar__list.products-list ul {
+  display: none;
+}
+.sidebar__list.products-list ul.active {
   display: block;
 }
 
@@ -1527,6 +1530,7 @@ a.pdf span {
 }
 
 .products-items__link:hover,
+.products-items__link:active,
 .products-items__link:visited {
   color: white;
 }
@@ -1721,4 +1725,69 @@ a.pdf span {
   border-top: 1px solid #337bc0;
   border-bottom: 1px solid #011e3f;
   background: linear-gradient(#0059AF, #033F82);
+}
+.tabs {
+  margin-top: 30px;
+}
+.tabs__header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+.tabs__title {
+  position: relative;
+  margin: 0;
+  padding: 5px 15px 10px;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #878686;
+  box-shadow: 0 -2px 5px 3px #eee;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(to bottom, #fefefe 0%,#eaeaea 100%);
+  transition: all .4s ease;
+  cursor: pointer;
+  z-index: 5;
+}
+.tabs__title:hover,
+.tabs__title.active {
+  color: #01478d;
+  background: #fff;
+}
+.tabs__content {
+  padding-top: 16px;
+}
+
+.tabs__content .tabs__item {
+  display: none;
+}
+
+.tabs__content .tabs__item:first-child {
+  display: block;
+}
+.tabs .blue-text {
+  color: #005cab;
+}
+.main .tablepress {
+	border: 1px solid #d9dce3;
+}
+.main .tablepress td {
+  border: 1px solid #d9dce3;
+}
+.sp-easy-accordion .sp-ea-single .ea-header a {
+  padding: 5px!important;
+  font-size: 12px!important;
+  color: white !important;
+  background: #005cab!important;
+}
+
+.sp-easy-accordion .sp-ea-single .ea-header a i {
+  display: none!important;
+}
+.sp-easy-accordion .sp-ea-single .ea-header a {
+  line-height: 1!important;
+}
+.sp-easy-accordion .sp-ea-single  {
+  margin-bottom: 0 !important;
 }

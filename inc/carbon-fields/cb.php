@@ -134,6 +134,14 @@ function crb_attach_theme_options() {
 			     ->set_width( 30 ),
 			Field::make( 'text', 'crb_more_info_en', __( 'crb_more_info_en' ) )
 			     ->set_width( 30 ),
+
+			Field::make( 'separator', 'crb_where_to_buy_button_separator', __( 'More information' ) ),
+			Field::make( 'text', 'crb_where_to_buy_button_ro', __( 'crb_where_to_buy_button_ro' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_where_to_buy_button_ru', __( 'crb_where_to_buy_button_ru' ) )
+			     ->set_width( 30 ),
+			Field::make( 'text', 'crb_where_to_buy_button_en', __( 'crb_where_to_buy_button_en' ) )
+			     ->set_width( 30 ),
 		) )
 	         ->add_tab( __( 'Titles' ), array(
 		         Field::make( 'separator', 'crb_footer_title_sep', __( 'Footer_title_about' ) ),

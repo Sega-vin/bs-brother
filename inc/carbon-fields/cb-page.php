@@ -57,3 +57,18 @@ function crb_products_page_title_options() {
 		              ->set_width( 30 ),
 	         ) );
 }
+
+add_action( 'carbon_fields_register_fields', 'crb_where_to_buy_page_title_options' );
+function crb_where_to_buy_page_title_options() {
+	Container::make( 'post_meta', __( 'Where to buy page title' ) )
+	         ->where( 'post_id', '=', 112 )
+	         ->or_where( 'post_id', '=', 107 )
+	         ->add_fields( array(
+		         Field::make( 'text', 'crb_where_to_buy_title_ro', __( 'crb_where_to_buy_title_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_where_to_buy_title_ru', __( 'crb_where_to_buy_title_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_where_to_buy_title_en', __( 'crb_where_to_buy_title_en' ) )
+		              ->set_width( 30 ),
+	         ) );
+}
