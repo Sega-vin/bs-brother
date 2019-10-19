@@ -1763,6 +1763,18 @@ a.pdf span {
   display: none;
 }
 
+.tabs__content .tabs__item h2 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tabs__content .tabs__item h3.color-inherit {
+  margin-bottom: 0;
+	color: inherit;
+}
+
 .tabs__content .tabs__item:first-child {
   display: block;
 }
