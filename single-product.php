@@ -34,11 +34,11 @@ if ( in_array( 'industrial-sewing-machines', $taxonomy_product ) ) {
     </li>
 
     <li>
-	    <?php if( in_array( 'industrial-sewing-machines', $taxonomy_product ) ): ?>
+		<?php if ( in_array( 'industrial-sewing-machines', $taxonomy_product ) ): ?>
             <a href="<?php echo get_page_link( 45 ); ?>"><?php echo get_the_title( 45 ); ?></a>
-	    <?php elseif( in_array( 'industrial-garment-printers', $taxonomy_product ) ): ?>
+		<?php elseif ( in_array( 'industrial-garment-printers', $taxonomy_product ) ): ?>
             <a href="<?php echo get_page_link( 49 ); ?>"><?php echo get_the_title( 49 ); ?></a>
-	    <?php endif; ?>
+		<?php endif; ?>
     </li>
     <li><?php the_title(); ?></li>
 </ul>

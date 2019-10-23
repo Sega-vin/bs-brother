@@ -2,11 +2,9 @@
 
     <div class="single-product__content">
 		<?php if ( have_posts() ): ?>
-            <div class="single-product__content">
-				<?php the_post(); ?>
-				<?php the_content(); ?>
-				<?php wp_reset_postdata(); ?>
-            </div>
+			<?php the_post(); ?>
+			<?php the_content(); ?>
+			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
     </div>
 

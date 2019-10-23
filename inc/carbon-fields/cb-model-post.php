@@ -114,10 +114,10 @@ function crb_model_post_garment_options() {
 			                   ->set_options( array(
 				                   'Overview'       => 'Overview',
 				                   'Specifications' => 'Specifications',
-				                   'Accessories'    => 'Accessories',
-				                   'Software'       => 'Software',
+				                   'Optional Accessories'    => 'Optional Accessories',
+				                   'Optional Software'       => 'Optional Software',
 				                   'Video'          => 'Video',
-				                   'Documents'      => 'Documents',
+				                   'Support Documents'      => 'Support Documents',
 			                   ) ),
 
 			              Field::make( 'rich_text', 'crb_product_overview_ro', 'Overview ro' )
@@ -188,68 +188,68 @@ function crb_model_post_garment_options() {
 				                   )
 			                   ) ),
 
-			              Field::make( 'rich_text', 'crb_product_accesories_ro', 'Accessories ro' )
+			              Field::make( 'rich_text', 'crb_product_accesories_ro', 'Optional Accessories ro' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Accessories',
+					                   'value'   => 'Optional Accessories',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_accesories_ru', 'Accessories ru' )
+			              Field::make( 'rich_text', 'crb_product_accesories_ru', 'Optional Accessories ru' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Accessories',
+					                   'value'   => 'Optional Accessories',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_accesories_en', 'Accessories en' )
+			              Field::make( 'rich_text', 'crb_product_accesories_en', 'Optional Accessories en' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Accessories',
+					                   'value'   => 'Optional Accessories',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
 
-			              Field::make( 'rich_text', 'crb_product_software_ro', 'Software ro' )
+			              Field::make( 'rich_text', 'crb_product_software_ro', 'Optional Software ro' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Software',
+					                   'value'   => 'Optional Software',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_software_ru', 'Software ru' )
+			              Field::make( 'rich_text', 'crb_product_software_ru', 'Optional Software ru' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Software',
+					                   'value'   => 'Optional Software',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_software_en', 'Software en' )
+			              Field::make( 'rich_text', 'crb_product_software_en', 'Optional Software en' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Software',
+					                   'value'   => 'Optional Software',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
@@ -290,34 +290,34 @@ function crb_model_post_garment_options() {
 				                   )
 			                   ) ),
 
-			              Field::make( 'rich_text', 'crb_product_documents_ro', 'Documents ro' )
+			              Field::make( 'rich_text', 'crb_product_documents_ro', 'Support Documents ro' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Documents',
+					                   'value'   => 'Support Documents',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_documents_ru', 'Documents ru' )
+			              Field::make( 'rich_text', 'crb_product_documents_ru', 'Support Documents ru' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Documents',
+					                   'value'   => 'Support Documents',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
 				                   )
 			                   ) ),
-			              Field::make( 'rich_text', 'crb_product_documents_en', 'Documents en' )
+			              Field::make( 'rich_text', 'crb_product_documents_en', 'Support Documents en' )
 			                   ->set_conditional_logic( array(
 				                   'relation' => 'AND', // Optional, defaults to "AND"
 				                   array(
 					                   'field'   => 'crb_radio',
-					                   'value'   => 'Documents',
+					                   'value'   => 'Support Documents',
 					                   // Optional, defaults to "". Should be an array if "IN" or "NOT IN" operators are used.
 					                   'compare' => '=',
 					                   // Optional, defaults to "=". Available operators: =, <, >, <=, >=, IN, NOT IN
