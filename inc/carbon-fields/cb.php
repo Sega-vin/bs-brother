@@ -104,6 +104,49 @@ function crb_attach_theme_options() {
 			                   ->set_value_type( 'url' )
 		              ) )
 		              ->set_layout( 'tabbed-horizontal' ),
+	         ) )
+	         ->add_tab( __( 'Garment tabs' ), array(
+		         Field::make( 'text', 'crb_overview_ro', __( 'crb_overview_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_overview_ru', __( 'crb_overview_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_overview_en', __( 'crb_overview_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'text', 'crb_specifications_ro', __( 'crb_specifications_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_specifications_ru', __( 'crb_specifications_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_specifications_en', __( 'crb_specifications_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'text', 'crb_optional_accessories_ro', __( 'crb_optional_accessories_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_optional_accessories_ru', __( 'crb_optional_accessories_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_optional_accessories_en', __( 'crb_optional_accessories_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'text', 'crb_optional_software_ro', __( 'crb_optional_software_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_optional_software_ru', __( 'crb_optional_software_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_optional_software_en', __( 'crb_optional_software_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'text', 'crb_video_ro', __( 'crb_video_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_video_ru', __( 'crb_video_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_video_en', __( 'crb_video_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'text', 'crb_support_documents_ro', __( 'crb_support_documents_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_support_documents_ru', __( 'crb_support_documents_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_support_documents_en', __( 'crb_support_documents_en' ) )
+		              ->set_width( 30 ),
 	         ) );
 
 
