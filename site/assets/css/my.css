@@ -1685,9 +1685,6 @@ a.pdf span {
   position: relative;
 }
 
-.single-product .banner-wrap {
-  float: right;
-}
 .single-product .banner {
   margin-bottom: 30px;
 }
@@ -1714,7 +1711,7 @@ a.pdf span {
 .single-product .banner-update-link {
   display: block;
   margin: 0;
-  padding: 8px 0;
+  padding: 8px;
   width: 100%;
   height: auto;
   font-weight: bold;
@@ -1732,6 +1729,7 @@ a.pdf span {
 .tabs__header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   border-bottom: 1px solid #e0e0e0;
 }
 .tabs__title {
@@ -1790,4 +1788,14 @@ a.pdf span {
 }
 .sp-easy-accordion .sp-ea-single  {
   margin-bottom: 0 !important;
+}
+.single-product__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.single-product__content {
+  max-width: 460px;
+}
+.banner-wrap {
+  margin-left: 10px;
 }

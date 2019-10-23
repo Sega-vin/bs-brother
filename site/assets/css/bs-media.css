@@ -1,0 +1,12 @@
+@media screen and (max-width: 510px) {
+	.single-product .banner-wrap {
+		float: none;
+	}
+}
+@media screen and (max-width: 400px) {
+	.tabs__header {
+		display: block;
+	}
+}
+
+

@@ -4,6 +4,7 @@ function bs_brother_scripts() {
 	wp_enqueue_style( 'bs-brother-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bs-tooltipster-style', get_template_directory_uri().'/site/assets/libs/tooltipster/tooltipster.main.min.css' );
 	wp_enqueue_style( 'bs-my-style', get_template_directory_uri().'/site/assets/css/my.css' );
+	wp_enqueue_style( 'bs-media-style', get_template_directory_uri().'/site/assets/css/bs-media.css' );
 
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');

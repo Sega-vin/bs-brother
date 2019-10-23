@@ -95,6 +95,10 @@ function crb_model_post_garment_options() {
 		         'value'    => 'industrial-garment-printers',
 		         'taxonomy' => 'model',
 	         ) )
+	         ->add_tab( 'Button to update', array(
+		         Field::make( 'separator', 'crb_product_single_sep_4', __( 'Button to update' ) ),
+		         Field::make( 'text', 'crb_product_singel_update_button_link', __( 'Button to update link' ) ),
+	         ) )
 	         ->add_tab( __( 'Short text' ), array(
 		         Field::make( 'textarea', 'crb_model_short_text_ro', __( 'crb_model_short_text_ro' ) )
 		              ->set_width( 30 ),
