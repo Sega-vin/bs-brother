@@ -15,7 +15,6 @@ if ( $id === 107 ) {
 }
 ?>
 
-
 <ul class="breadcrumbs">
     <li>
         <a href="<?php echo get_page_link( 16 ); ?>"><?php echo get_the_title( 16 ); ?></a>
