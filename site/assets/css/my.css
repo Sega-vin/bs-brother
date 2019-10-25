@@ -1031,6 +1031,9 @@ ul {
 .section.section-country {
   box-shadow: none;
 }
+.section.section-country a {
+	color: #004b93;
+}
 
 .section.padding-right {
   padding-right: 52px;
@@ -1813,4 +1816,11 @@ a.pdf span {
 }
 .page-city__footer a {
   color: #004b93;
+}
+.country__item table {
+  margin-top: 16px;
+}
+.country__item th {
+  font-weight: bold;
+  text-align: left;
 }

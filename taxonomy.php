@@ -55,6 +55,6 @@ $country_name = $objects->name;
 		<?php endif; ?>
     </div>
 
-    <a class="country__back-link" href="">Back to country selection</a>
+    <a class="country__back-link" href="<?php echo get_page_link($page_id); ?>"><?php echo carbon_get_theme_option('crb_where_to_buy_back_link'.get_lang()); ?></a>
 </section>
 <?php get_footer(); ?>

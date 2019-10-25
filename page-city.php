@@ -25,56 +25,31 @@ if ( $id === 107 ) {
          style="background-image: url('<?php echo get_template_directory_uri() ?>/site/assets/i/where_to_buy_background.jpg'); background-size: cover;">
     <div class="where-to-buy__grid">
         <div class="where-to-buy__item">
+            <?php $region_id = 14; ?>
+            <?php $region_slug = get_term($region_id)->slug; ?>
 			<?php
-			$region_id = 14; //регион, европа, африка, ближний восток id
-			$term_name = get_term( $region_id, 'categories' )->name; // название региона
-			$terms     = get_term_children( $region_id, 'categories' ); // дочерние таксономии региона
+			showCountries($region_id, $machine_type, $region_slug);
 			?>
+        </div>
 
-            <h2 class="section__title"><?php echo $term_name; ?></h2>
+        <div class="where-to-buy__item">
+		    <?php $region_id = 24; ?>
+		    <?php $region_slug = get_term($region_id)->slug; ?>
+		    <?php
+		    showCountries($region_id, $machine_type, $region_slug);
+		    ?>
+        </div>
 
-			<?php $address_posts = new WP_Query( [
-				'posts_per_page' => - 1,
-				'post_type'      => 'address',
-				'categories'     => $machine_type
-			] ); ?>
-
-			<?php $countries = []; ?>
-
-            <ul>
-				<?php if ( $address_posts->have_posts() ): ?>
-					<?php while ( $address_posts->have_posts() ): ?>
-						<?php $address_posts->the_post(); ?>
-
-						<?php $terms = get_the_terms( $post->ID, 'categories' ); ?>
-						<?php
-						foreach ( $terms as $term ) {
-							if ( $term->slug === 'industrial-sewing-machines' || $term->slug == 'industrial-garment-printers' ) {
-								continue;
-							} else {
-								$countries[ $term->name ] = $term->term_id;
-							}
-						}
-						?>
-					<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
-					<?php
-					$unique_data = array_unique( $countries );
-					ksort( $unique_data );
-					?>
-					<?php foreach ( $unique_data as $key => $item ): ?>
-						<?php add_query_arg('machine_type', $machine_type); ?>
-                        <li>
-                            <a href="<?php echo esc_url(add_query_arg('machine_type', $machine_type, get_term_link( $item ))); ?>"><?php echo $key; ?></a>
-                        </li>
-					<?php endforeach; ?>
-
-				<?php endif; ?>
-            </ul>
+        <div class="where-to-buy__item">
+		    <?php $region_id = 28; ?>
+		    <?php $region_slug = get_term($region_id)->slug; ?>
+		    <?php
+		    showCountries($region_id, $machine_type, $region_slug);
+		    ?>
         </div>
     </div>
     <footer class="page-city__footer">
-        <p><?php echo apply_filters( 'the_content', carbon_get_theme_option( 'crb_where_to_buy_footer'.get_lang() ) ); ?></p>
+        <p><?php echo apply_filters( 'the_content', carbon_get_theme_option( 'crb_where_to_buy_footer' . get_lang() ) ); ?></p>
     </footer>
 </section>
 <?php get_footer(); ?>

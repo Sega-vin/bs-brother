@@ -55,3 +55,64 @@ function add_query_vars_filter( $vars ){
 }
 
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+function showCountries( $region_id, $machine_type, $region_slug) {
+	$term_name = get_term( $region_id, 'categories' )->name; // название региона
+	$html = '';
+
+	$html .= '<h2 class="section__title">'.$term_name.'</h2>';
+
+	$address_posts = new WP_Query( [
+		'posts_per_page' => - 1,
+		'post_type'      => 'address',
+		'tax_query'      => [
+			'relation' => 'AND',
+			[
+				'taxonomy' => 'categories',
+				'field'    => 'slug',
+				'terms'    => $region_slug,
+			],
+			[
+				'taxonomy' => 'categories',
+				'field'    => 'slug',
+				'terms'    => $machine_type,
+			]
+		],
+	] );
+	$countries = [];
+
+	$html .= '<ul>';
+	global $post;
+
+	if ( $address_posts->have_posts() ){
+		while ( $address_posts->have_posts() ) {
+			$address_posts->the_post();
+
+			$terms = get_the_terms( $post->ID, 'categories' );
+			foreach ( $terms as $term ) {
+				if ( $term->slug === 'industrial-sewing-machines' || $term->slug == 'industrial-garment-printers' ) {
+					continue;
+				} else {
+					$countries[ $term->name ] = $term->term_id;
+				}
+			}
+
+		}
+		wp_reset_postdata();
+
+		$unique_data = array_unique( $countries );
+		ksort( $unique_data );
+
+		foreach ( $unique_data as $key => $item ) {
+			add_query_arg( 'machine_type', $machine_type );
+			$html .= '<li>';
+			$html .= '<a href="'.esc_url( add_query_arg( 'machine_type', $machine_type, get_term_link( $item ) ) ).' ">'.$key.'</a>';
+			$html .= '</li>';
+		}
+	}
+
+	$html .= '</ul>';
+
+	echo $html;
+}

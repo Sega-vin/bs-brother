@@ -235,7 +235,15 @@ function crb_attach_theme_options() {
 		              ->set_width( 30 ),
 		         Field::make( 'rich_text', 'crb_where_to_buy_footer_en', __( 'crb_where_to_buy_footer_en' ) )
 		              ->set_width( 30 ),
-		         Field::make( 'text', 'crb_footer_links_link', __( 'crb_footer_links_link' ) )
+		         Field::make( 'text', 'crb_footer_links_link', __( 'crb_footer_links_link' ) ),
+
+		         Field::make( 'separator', 'crb_where_to_buy_back_link_sep_ro', __( 'Where to buy back_link' ) ),
+		         Field::make( 'text', 'crb_where_to_buy_back_link_ro', __( 'crb_where_to_buy_back_link_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_where_to_buy_back_link_ru', __( 'crb_where_to_buy_back_link_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_where_to_buy_back_link_en', __( 'crb_where_to_buy_back_link_en' ) )
+		              ->set_width( 30 ),
 	         ) );
 }
 
