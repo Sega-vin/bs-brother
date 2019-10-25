@@ -1806,3 +1806,11 @@ a.pdf span {
 .banner-wrap {
   margin-left: 10px;
 }
+.page-city__footer {
+  margin-top: 20px;
+  padding: 12px 0;
+  border-top: 1px solid #e0e0e0;
+}
+.page-city__footer a {
+  color: #004b93;
+}

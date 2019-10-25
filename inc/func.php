@@ -112,3 +112,7 @@ function hs_image_editor_default_to_gd( $editors ) {
 	return $editors;
 }
 add_filter( 'wp_image_editors', 'hs_image_editor_default_to_gd' );
+
+function showCities(){
+
+}

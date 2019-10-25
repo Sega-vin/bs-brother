@@ -49,4 +49,9 @@ add_action( 'after_setup_theme', 'bs_brother_content_width', 0 );
 //if ( defined( 'JETPACK__VERSION' ) ) {
 //	require get_template_directory() . '/inc/jetpack.php';
 //}
+function add_query_vars_filter( $vars ){
+	$vars[] = "machine_type";
+	return $vars;
+}
 
+add_filter( 'query_vars', 'add_query_vars_filter' );

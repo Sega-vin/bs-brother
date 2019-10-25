@@ -4,7 +4,17 @@
  */
 ?>
 <?php get_header(); ?>
-<?php $id = get_the_ID(); ?>
+<?php
+$id           = get_the_ID();
+$machine_type = '';
+
+if ( $id === 107 ) {
+	$machine_type = 'industrial-sewing-machines';
+} elseif ( $id == 112 ) {
+	$machine_type = 'industrial-garment-printers';
+}
+?>
+
 
 <ul class="breadcrumbs">
     <li>
@@ -17,55 +27,55 @@
     <div class="where-to-buy__grid">
         <div class="where-to-buy__item">
 			<?php
-			$region_id = 14;
-			$term_name = get_term( $region_id, 'categories' )->name;
-			$terms     = get_term_children( $region_id, 'categories' );
+			$region_id = 14; //регион, европа, африка, ближний восток id
+			$term_name = get_term( $region_id, 'categories' )->name; // название региона
+			$terms     = get_term_children( $region_id, 'categories' ); // дочерние таксономии региона
 			?>
+
             <h2 class="section__title"><?php echo $term_name; ?></h2>
 
-            <ul>
-				<?php foreach ( $terms as $term_item ): ?>
-                    <li>
-                        <a href="<?php echo get_term_link( $term_item ); ?>"><?php echo get_term( $term_item )->name; ?></a>
-                    </li>
-				<?php endforeach; ?>
-            </ul>
+			<?php $address_posts = new WP_Query( [
+				'posts_per_page' => - 1,
+				'post_type'      => 'address',
+				'categories'     => $machine_type
+			] ); ?>
 
-        </div>
-        <div class="where-to-buy__item">
-			<?php
-			$region_id = 24;
-			$term_name = get_term( $region_id, 'categories' )->name;
-			$terms     = get_term_children( $region_id, 'categories' );
-			?>
-            <h2 class="section__title"><?php echo $term_name; ?></h2>
+			<?php $countries = []; ?>
 
             <ul>
-				<?php foreach ( $terms as $term_item ): ?>
-                    <li>
-                        <a href="<?php echo get_term_link( $term_item ); ?>"><?php echo get_term( $term_item )->name; ?></a>
-                    </li>
-				<?php endforeach; ?>
+				<?php if ( $address_posts->have_posts() ): ?>
+					<?php while ( $address_posts->have_posts() ): ?>
+						<?php $address_posts->the_post(); ?>
+
+						<?php $terms = get_the_terms( $post->ID, 'categories' ); ?>
+						<?php
+						foreach ( $terms as $term ) {
+							if ( $term->slug === 'industrial-sewing-machines' || $term->slug == 'industrial-garment-printers' ) {
+								continue;
+							} else {
+								$countries[ $term->name ] = $term->term_id;
+							}
+						}
+						?>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+					<?php
+					$unique_data = array_unique( $countries );
+					ksort( $unique_data );
+					?>
+					<?php foreach ( $unique_data as $key => $item ): ?>
+						<?php add_query_arg('machine_type', $machine_type); ?>
+                        <li>
+                            <a href="<?php echo esc_url(add_query_arg('machine_type', $machine_type, get_term_link( $item ))); ?>"><?php echo $key; ?></a>
+                        </li>
+					<?php endforeach; ?>
+
+				<?php endif; ?>
             </ul>
-
-        </div>
-        <div class="where-to-buy__item">
-			<?php
-			$region_id = 28;
-			$term_name = get_term( $region_id, 'categories' )->name;
-			$terms     = get_term_children( $region_id, 'categories' );
-			?>
-            <h2 class="section__title"><?php echo $term_name; ?></h2>
-
-            <ul>
-				<?php foreach ( $terms as $term_item ): ?>
-                    <li>
-                        <a href="<?php echo get_term_link( $term_item ); ?>"><?php echo get_term( $term_item )->name; ?></a>
-                    </li>
-				<?php endforeach; ?>
-            </ul>
-
         </div>
     </div>
+    <footer class="page-city__footer">
+        <p><?php echo apply_filters( 'the_content', carbon_get_theme_option( 'crb_where_to_buy_footer'.get_lang() ) ); ?></p>
+    </footer>
 </section>
 <?php get_footer(); ?>

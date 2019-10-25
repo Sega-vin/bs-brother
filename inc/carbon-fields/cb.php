@@ -195,7 +195,7 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_about_footer_title_en', __( 'crb_about_footer_title_en' ) )
 		              ->set_width( 30 ),
 
-		         Field::make( 'separator', 'crb_footer_links_sep', __( 'Footer_title_links' ) ),
+		         Field::make( 'separator', 'crb_footer_links_sep-1', __( 'Footer_title_links' ) ),
 		         Field::make( 'text', 'crb_footer_links_title_ro', __( 'crb_footer_links_title_ro' ) )
 		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_footer_links_title_ru', __( 'crb_footer_links_title_ru' ) )
@@ -212,6 +212,7 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_single_product_banner_title_en', __( 'crb_single_product_banner_title_en' ) )
 		              ->set_width( 30 ),
 
+		         Field::make( 'separator', 'crb_footer_links_sep', __( 'Footer links' ) ),
 		         Field::make( 'text', 'crb_footer_links_text_ro', __( 'crb_footer_links_text_ro' ) )
 		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_footer_links_text_ru', __( 'crb_footer_links_text_ru' ) )
@@ -219,6 +220,21 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_footer_links_text_en', __( 'crb_footer_links_text_en' ) )
 		              ->set_width( 30 ),
 
+		         Field::make( 'separator', 'crb_city_one_sep', __( 'City one title' ) ),
+		         Field::make( 'text', 'crb_city_one_text_ro', __( 'crb_city_one_text_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_city_one_text_ru', __( 'crb_city_one_text_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_city_one_text_en', __( 'crb_city_one_text_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'separator', 'crb_where_to_buy_footer_sep_ro', __( 'Where to buy footer' ) ),
+		         Field::make( 'rich_text', 'crb_where_to_buy_footer_ro', __( 'crb_where_to_buy_footer_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'rich_text', 'crb_where_to_buy_footer_ru', __( 'crb_where_to_buy_footer_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'rich_text', 'crb_where_to_buy_footer_en', __( 'crb_where_to_buy_footer_en' ) )
+		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_footer_links_link', __( 'crb_footer_links_link' ) )
 	         ) );
 }
