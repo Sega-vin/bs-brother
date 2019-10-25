@@ -31,10 +31,10 @@ $(function () {
 	let toggleLanguageMenu = function () {
 		$('#js-language__title').on('click', function (e) {
 			e.preventDefault();
-			if(!$(this).hasClass('active')){
+			if (!$(this).hasClass('active')) {
 				$(this).addClass('active')
 				$('#js-language .list').show();
-			}else{
+			} else {
 				$('#js-language__title').removeClass('active');
 				$('#js-language .list').hide();
 			}
@@ -84,7 +84,7 @@ $(function () {
 		});
 	};
 
-	if($(window).width() > 992){
+	if ($(window).width() > 992) {
 		showBlocksText();
 	}
 
@@ -114,8 +114,28 @@ $(function () {
 			$(this).addClass('active');
 
 			$('#js-tabs .tabs__item').hide();
-			$('#js-tabs .tabs__content .tabs__item[data-tab="'+dataTitle+'"]').show();
+			$('#js-tabs .tabs__content .tabs__item[data-tab="' + dataTitle + '"]').show();
 		});
 	};
 	tabs();
+
+	let menuAboutActiveItem = function () {
+		let windowHref = window.location.href;
+		$('.sidebar__list li').each(function () {
+			let $this = $(this);
+			let link = $this.find('a');
+			let hrefLink = link.attr('href');
+			if (windowHref === hrefLink) {
+				link.addClass('active');
+			}
+		});
+	};
+	menuAboutActiveItem();
+
+	let showAboutSubMenu = function () {
+		if ($('.sidebar__list li a.active').next().hasClass('sub-menu')) {
+			$('.sidebar__list li a.active').next().show();
+		}
+	};
+	showAboutSubMenu();
 });

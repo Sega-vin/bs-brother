@@ -5,8 +5,14 @@
 ?>
 <?php get_header(); ?>
 
-<img class="page-image" src="assets/i/media_03.jpg" alt="">
+<?php if(has_post_thumbnail()): ?>
+    <img class="page-image" src="<?php echo kama_thumb_src('w=940 &h=346'); ?>" alt="">
+<?php endif; ?>
+
 <ul class="breadcrumbs">
+    <li>
+        <a href="<?php echo get_page_link(517); ?>"><?php echo get_the_title(517); ?></a>
+    </li>
     <li><?php the_title(); ?></li>
 </ul>
 <section class="section grid padding-right">
