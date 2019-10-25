@@ -10,10 +10,10 @@
 get_header();
 ?>
 
-<?php if(in_category('events')): ?>
+<?php if(in_category('about-brother')): ?>
 	<ul class="breadcrumbs">
-		<li><a href="abouot-brothers.html">About Brothers</a></li>
-		<li>Events</li>
+		<li><a href="abouot-brothers.html"><?php echo get_the_title(); ?></a></li>
+		<li><?php the_title(); ?></li>
 	</ul><section class="section grid padding-right">
 		<aside class="sidebar">
 			<ul class="sidebar__list">

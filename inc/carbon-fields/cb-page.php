@@ -99,3 +99,15 @@ function crb_where_to_buy_page_title_options() {
 	         ) );
 
 }
+
+add_action( 'carbon_fields_register_fields', 'crb_about_page_options' );
+function crb_about_page_options() {
+	Container::make( 'post_meta', __( 'About banner' ) )
+	         ->where( 'post_id', '=', 517 )
+	         ->add_tab( ( 'Banner' ), array(
+		         Field::make( 'rich_text', 'crb_about_banner_ro', __( 'crb_about_banner_ro' ) ),
+		         Field::make( 'rich_text', 'crb_about_banner_ru', __( 'crb_about_banner_ru' ) ),
+		         Field::make( 'rich_text', 'crb_about_banner_en', __( 'crb_about_banner_en' ) ),
+	         ) );
+
+}
