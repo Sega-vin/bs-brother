@@ -945,6 +945,9 @@ ul {
 .main-footer__list {
   padding: 0 18px 18px;
 }
+.main-footer__list .sub-menu {
+  display: none;
+}
 
 .main-footer__list.main-footer__list--border-bottom {
   border-bottom: 1px solid #E9EAEB;
@@ -1125,7 +1128,7 @@ ul {
   }
 }
 
-.main.press-releases h2 {
+.press-releases h2 {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
@@ -1167,6 +1170,10 @@ ul {
 .main a {
   text-decoration: none;
   color: #004b93;
+}
+.main a.bold {
+  font-weight: bold;
+  color: inherit;
 }
 
 .main strong {
@@ -1616,6 +1623,22 @@ a.pdf span {
   grid-template-columns: 250px 1fr;
   border: 1px solid #e0e0e0;
 }
+.newsletter-form .form-group p {
+  display: none;
+}
+
+.newsletter-form .form-group input[type="email"] {
+  display: table;
+	margin: 0 auto;
+  width: 270px;
+}
+
+@media screen and (max-width: 610px) {
+  .newsletter-form .form-group input[type="email"] {
+		width: 100%;
+    box-sizing: border-box;
+	}
+}
 
 @media screen and (max-width: 530px) {
   .newsletter-form .form-group {
@@ -1629,6 +1652,10 @@ a.pdf span {
 
 .newsletter-form .form-group__item {
   padding: 5px;
+}
+.newsletter-form .form-group__item span {
+  display: block;
+  box-sizing: border-box;
 }
 
 .newsletter-form .form-group__item:first-child {
@@ -1653,7 +1680,8 @@ a.pdf span {
 }
 
 .newsletter-form input[type="submit"] {
-  margin-top: 20px;
+  display: table;
+  margin: 20px auto 0;
   padding: 10px 20px;
   min-width: 150px;
   color: white;
@@ -1661,6 +1689,20 @@ a.pdf span {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+.newsletter-form .form-group__item.center {
+  display: flex;
+  align-items: center;
+}
+.newsletter-form .form-group__item .checkox-row label {
+  display: flex;
+  width: 100%;
+}
+@media screen and (max-width: 340px) {
+
+  .newsletter-form input[type="submit"] {
+    min-width: auto;
+	}
 }
 
 .newsletter-form .checkox-row {
@@ -1823,4 +1865,10 @@ a.pdf span {
 .country__item th {
   font-weight: bold;
   text-align: left;
+}
+.table-colorized .tablepress tfoot th, .tablepress thead th {
+  background: #004b93 !important;
+}
+.table-colorized .tablepress tbody td {
+  vertical-align: middle !important;
 }

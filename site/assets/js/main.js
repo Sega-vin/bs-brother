@@ -121,11 +121,21 @@ $(function () {
 
 	let menuAboutActiveItem = function () {
 		let windowHref = window.location.href;
-		$('.sidebar__list li').each(function () {
-			let $this = $(this);
-			let link = $this.find('a');
+		$('.sidebar__list > li > a').each(function () {
+			let link = $(this);
 			let hrefLink = link.attr('href');
+
 			if (windowHref === hrefLink) {
+				link.addClass('active');
+			}
+		});
+
+		$('.sidebar__list .sub-menu li a').each(function () {
+			let link = $(this);
+			let hrefLink = link.attr('href');
+
+			if (windowHref === hrefLink) {
+				link.closest('.sub-menu').prev().addClass('active');
 				link.addClass('active');
 			}
 		});

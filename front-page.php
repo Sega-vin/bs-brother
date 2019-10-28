@@ -116,7 +116,7 @@
     <div class="events__line"></div>
     <div class="events__body">
         <header class="events__header">
-			<?php $event = get_category( 17 ); ?>
+			<?php $event = get_category( 43 ); ?>
             <a class="tooltip events__link" title="X-Fair Wien"
                href="<?php echo get_category_link( $event->term_id ); ?>"><?php echo $event->name; ?></a>
         </header>
