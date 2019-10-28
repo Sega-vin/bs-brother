@@ -159,6 +159,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/html5shiv-printshiv.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/site/assets/libs/html5shiv/respond.min.js"></script>
 <!--<![endif]-->
+
 <?php wp_footer(); ?>
 </body>
 </html>

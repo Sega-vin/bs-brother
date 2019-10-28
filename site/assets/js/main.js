@@ -148,4 +148,25 @@ $(function () {
 		}
 	};
 	showAboutSubMenu();
+
+	let cookieLanguage = function(){
+		let siteLang = $('html').attr('lang');
+
+		if(siteLang === 'ru-RU'){
+			$('.ctcc-more-info-link').text('Узнать больше');
+			$('#catapultCookie').text('Принимаю');
+			document.querySelector('.ctcc-inner span').childNodes[0].nodeValue = 'Этот сайт использует куки. Продолжая браузер, вы принимаете нашу Политику конфиденциальности.';
+		}
+		if(siteLang === 'ro-RO'){
+			$('.ctcc-more-info-link').text('Află mai mult');
+			document.querySelector('.ctcc-inner span').childNodes[0].nodeValue = 'Acest site web utilizează cookie-uri. Continuând navigarea, acceptați Politica noastră de confidențialitate.';
+		}
+	};
+	cookieLanguage();
+
+	let removePlaceholderSearch = function () {
+		$('.search-live input[type="text"].search-live-field').attr('placeholder', '');
+	}
+	removePlaceholderSearch();
 });
+

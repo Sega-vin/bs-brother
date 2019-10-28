@@ -36,8 +36,7 @@ function crb_model_post_options() {
 		         Field::make( 'complex', 'crb_single_product_banner', __( 'Single product banner' ) )
 		              ->add_fields( array(
 			              Field::make( 'text', 'name', __( 'filename' ) ),
-			              Field::make( 'file', 'crb_file', __( 'File' ) )
-			                   ->set_value_type( 'url' )
+			              Field::make( 'text', 'crb_file', __( 'File' ) )
 		              ) )
 		              ->set_layout( 'tabbed-horizontal' ),
 
@@ -339,8 +338,7 @@ function crb_model_post_garment_options() {
 		         Field::make( 'complex', 'crb_single_product_banner', __( 'Single product banner' ) )
 		              ->add_fields( array(
 			              Field::make( 'text', 'name', __( 'filename' ) ),
-			              Field::make( 'file', 'crb_file', __( 'File' ) )
-			                   ->set_value_type( 'url' )
+			              Field::make( 'text', 'crb_file', __( 'File link' ) )
 		              ) )
 		              ->set_layout( 'tabbed-horizontal' ),
 	         ) );

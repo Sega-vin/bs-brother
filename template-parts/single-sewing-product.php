@@ -12,7 +12,9 @@
 		<?php $single_banner = carbon_get_post_meta( get_the_ID(), 'crb_single_product_banner' ); ?>
 		<?php if ( $single_banner ): ?>
             <div class="banner">
-                <div class="banner__header"><?php echo carbon_get_theme_option( 'crb_single_product_banner_title' . get_lang() ); ?></div>
+                <div class="banner__header">
+                    <?php echo carbon_get_theme_option( 'crb_single_product_banner_title' . get_lang() ); ?>
+                </div>
 
                 <div class="banner__content">
                     <ul>
@@ -20,6 +22,7 @@
                             <li>
                                 <img src="<?php echo get_template_directory_uri() . '/site/assets/i/pdf_icon.png'; ?>"
                                      alt="">
+
                                 <a href="<?php echo $item['crb_file']; ?>"
                                    target="_blank"><?php echo $item['name']; ?></a>
                             </li>

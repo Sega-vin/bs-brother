@@ -244,6 +244,22 @@ function crb_attach_theme_options() {
 		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_where_to_buy_back_link_en', __( 'crb_where_to_buy_back_link_en' ) )
 		              ->set_width( 30 ),
+
+		         Field::make( 'separator', 'crb_support_sep_ro', __( 'Support' ) ),
+		         Field::make( 'text', 'crb_support_ro', __( 'crb_support_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_support_ru', __( 'crb_support_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_support_en', __( 'crb_support_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'separator', 'crb_other_sep_ro', __( 'Other' ) ),
+		         Field::make( 'text', 'crb_other_ro', __( 'crb_other_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_other_ru', __( 'crb_other_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_other_en', __( 'crb_other_en' ) )
+		              ->set_width( 30 ),
 	         ) );
 }
 

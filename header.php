@@ -20,6 +20,7 @@
                 <li><a href="<?php echo carbon_get_theme_option('crb_header_search_global_link'); ?>"><?php echo carbon_get_theme_option('crb_header_search_global_title'.get_lang()); ?></a></li>
             </ul>
             <div class="search-form" id="js-search-form">
+                <?php echo do_shortcode('[search_live]'); ?>
                 <input type="text" name="search">
             </div>
         </div>
