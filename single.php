@@ -9,11 +9,11 @@
 
 get_header();
 ?>
-
-<?php if ( in_category( 'about-brother' ) ): ?>
+<?php if ( in_category( 'events' ) ): ?>
+<?php endif; ?>
     <ul class="breadcrumbs">
         <li>
-            <a href="abouot-brothers.html"><?php echo get_the_title(); ?></a>
+            <a href="<?php echo get_page_link( 517 ); ?>"><?php echo get_the_title( 517 ); ?></a>
         </li>
         <li><?php the_title(); ?></li>
     </ul>
@@ -41,13 +41,18 @@ get_header();
         <div class="main">
 			<?php if ( have_posts() ): ?>
 			<?php the_post(); ?>
-            <h2 class="section__title"><?php the_title();?></h2>
-            <?php the_content(); ?>
+            <div class="page-header">
+                <h2 class="section__title"><?php the_title(); ?></h2>
+                <time><?php echo get_the_date( 'd.m.Y' ); ?></time>
+            </div>
+            <div class="clearfix">
+				<?php the_content(); ?>
+            </div>
+            <hr>
+            <a class="back-link" href="#"><?php echo carbon_get_theme_option('crb_back_link'.get_lang()); ?></a>
         </div>
 
 		<?php endif; ?>
     </section>
-<?php endif; ?>
-
 <?php
 get_footer();

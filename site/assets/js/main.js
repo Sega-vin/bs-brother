@@ -168,5 +168,17 @@ $(function () {
 		$('.search-live input[type="text"].search-live-field').attr('placeholder', '');
 	}
 	removePlaceholderSearch();
+
+	let backLink = function(){
+		$('.back-link').click(function(e){
+			e.preventDefault();
+
+			if(document.referrer.indexOf(window.location.hostname) != -1){
+				parent.history.back();
+				return false;
+			}
+		});
+	};
+	backLink();
 });
 

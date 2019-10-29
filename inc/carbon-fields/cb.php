@@ -178,7 +178,7 @@ function crb_attach_theme_options() {
 			Field::make( 'text', 'crb_more_info_en', __( 'crb_more_info_en' ) )
 			     ->set_width( 30 ),
 
-			Field::make( 'separator', 'crb_where_to_buy_button_separator', __( 'More information' ) ),
+			Field::make( 'separator', 'crb_where_to_buy_button_separator', __( 'Where to buy button' ) ),
 			Field::make( 'text', 'crb_where_to_buy_button_ro', __( 'crb_where_to_buy_button_ro' ) )
 			     ->set_width( 30 ),
 			Field::make( 'text', 'crb_where_to_buy_button_ru', __( 'crb_where_to_buy_button_ru' ) )
@@ -259,6 +259,14 @@ function crb_attach_theme_options() {
 		         Field::make( 'text', 'crb_other_ru', __( 'crb_other_ru' ) )
 		              ->set_width( 30 ),
 		         Field::make( 'text', 'crb_other_en', __( 'crb_other_en' ) )
+		              ->set_width( 30 ),
+
+		         Field::make( 'separator', 'crb_back_link_sep_ro', __( 'Back link' ) ),
+		         Field::make( 'text', 'crb_back_link_ro', __( 'crb_back_link_ro' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_back_link_ru', __( 'crb_back_link_ru' ) )
+		              ->set_width( 30 ),
+		         Field::make( 'text', 'crb_back_link_en', __( 'crb_back_link_en' ) )
 		              ->set_width( 30 ),
 	         ) );
 }
