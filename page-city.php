@@ -32,7 +32,7 @@ if ( $id === 107 ) {
 			?>
         </div>
 
-        <div class="where-to-buy__item">
+        <div class="where-to-buy__item where-to-buy__item--count-1">
 		    <?php $region_id = 24; ?>
 		    <?php $region_slug = get_term($region_id)->slug; ?>
 		    <?php
@@ -40,7 +40,7 @@ if ( $id === 107 ) {
 		    ?>
         </div>
 
-        <div class="where-to-buy__item">
+        <div class="where-to-buy__item where-to-buy__item--count-2">
 		    <?php $region_id = 28; ?>
 		    <?php $region_slug = get_term($region_id)->slug; ?>
 		    <?php

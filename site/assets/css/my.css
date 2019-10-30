@@ -1562,14 +1562,28 @@ a.pdf span {
 
 .where-to-buy__grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 	grid-gap: 12px;
 }
-
 .where-to-buy__grid ul {
-	-webkit-column-count: 3;
-	column-count: 3;
+	display: flex;
+	flex-flow: column wrap;
+	height: 230px;
 }
+@media screen and (max-width: 380px) {
+	.where-to-buy__grid ul {
+		height: auto;
+	}
+
+}
+
+
+/*.where-to-buy__item--count-1 ul{*/
+/*	column-count: 1;*/
+/*}*/
+/*.where-to-buy__item--count-2 ul{*/
+/*	column-count: 2;*/
+/*}*/
 
 .where-to-buy__grid ul a {
 	text-decoration: none;
