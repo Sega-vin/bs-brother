@@ -20,12 +20,12 @@ $country_name = $objects->name;
     </li>
     <li><?php echo $country_name; ?></li>
 </ul>
-<section class="section section-country"
-         style="background-color: #f5f6f8; background-image: url('<?php echo get_template_directory_uri(); ?>/site/assets/i/where_to_buy_background.jpg'); background-repeat: no-repeat;">
+<section class="section section-country" style="background-color: #f5f6f8; background-image: url('<?php echo get_template_directory_uri(); ?>/site/assets/i/where_to_buy_background.jpg'); background-repeat: no-repeat;">
     <h2 class="section__title"><?php echo carbon_get_theme_option( 'crb_city_one_text' . get_lang() ); ?></h2>
 
 	<?php $country_posts = new WP_Query( [
 		'post_type'      => 'address',
+		'order' => 'DESC',
 		'tax_query'      => [
 			'relation' => 'AND',
 			[

@@ -1043,6 +1043,7 @@ ul {
 }
 
 .section.section-country a {
+	text-decoration: none;
 	color: #004b93;
 }
 
@@ -1574,7 +1575,6 @@ a.pdf span {
 	.where-to-buy__grid ul {
 		height: auto;
 	}
-
 }
 
 

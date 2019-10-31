@@ -33,9 +33,9 @@
 		<?php endif; ?>
 
 		<?php $banner_link = carbon_get_post_meta( get_the_ID(), 'crb_product_singel_update_button_link' ); ?>
+
 		<?php if ( $banner_link ): ?>
-            <a class="banner-update-link"
-               href="<?php echo get_page_link( '49' ); ?>"><?php echo carbon_get_theme_option( 'crb_update_button' . get_lang() ); ?></a>
+            <a class="banner-update-link" href="<?php echo $banner_link; ?>"><?php echo carbon_get_theme_option( 'crb_update_button' . get_lang() ); ?></a>
 		<?php endif; ?>
     </div>
 </div>
@@ -63,6 +63,9 @@
 					<?php if ( ! empty( $column[ 'td_5' . get_lang() ] ) ): ?>
                         <th><?php echo $column[ 'td_5' . get_lang() ]; ?></th>
 					<?php endif; ?>
+					<?php if ( ! empty( $column[ 'td_6' . get_lang() ] ) ): ?>
+                        <th><?php echo $column[ 'td_6' . get_lang() ]; ?></th>
+					<?php endif; ?>
 				<?php else: ?>
 					<?php if ( ! empty( $column[ 'td_1' . get_lang() ] ) ): ?>
                         <td><?php echo $column[ 'td_1' . get_lang() ]; ?></td>
@@ -79,6 +82,9 @@
 					<?php endif; ?>
 					<?php if ( ! empty( $column[ 'td_5' . get_lang() ] ) ): ?>
                         <td><?php echo $column[ 'td_5' . get_lang() ]; ?></td>
+					<?php endif; ?>
+					<?php if ( ! empty( $column[ 'td_6' . get_lang() ] ) ): ?>
+                        <td><?php echo $column[ 'td_6' . get_lang() ]; ?></td>
 					<?php endif; ?>
 				<?php endif; ?>
             </tr>

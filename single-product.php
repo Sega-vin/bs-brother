@@ -92,6 +92,7 @@ if ( in_array( 'industrial-sewing-machines', $taxonomy_product ) ) {
 					<?php if ( $products->have_posts() ): ?>
 						<?php while ( $products->have_posts() ): ?>
 							<?php $products->the_post(); ?>
+
 							<?php if ( get_the_title() === $post_title ) {
 								$link_active = 'class="active"';
 							} else {

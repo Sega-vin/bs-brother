@@ -35,13 +35,18 @@
 				<?php while ( $garment_posts->have_posts() ): ?>
 					<?php $garment_posts->the_post(); ?>
                     <div class="products-items__item">
-                        <div class="products-items__img"><?php echo kama_thumb_img( 'w=190 &h=145' ); ?></div>
+                        <div class="products-items__img">
+                            <a href="<?php the_permalink(); ?>">
+								<?php echo kama_thumb_img( 'w=190 &h=145' ); ?>
+                            </a>
+                        </div>
                         <div class="products-items__content">
                             <h3 class="products-items__title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
-                            <p class="products-items__text"><?php echo carbon_get_the_post_meta('crb_model_short_text'.get_lang()); ?></p>
-                            <a class="products-items__link" href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option('crb_read_more'.get_lang()); ?></a>
+                            <p class="products-items__text"><?php echo carbon_get_the_post_meta( 'crb_model_short_text' . get_lang() ); ?></p>
+                            <a class="products-items__link"
+                               href="<?php the_permalink(); ?>"><?php echo carbon_get_theme_option( 'crb_read_more' . get_lang() ); ?></a>
                         </div>
                     </div>
 				<?php endwhile; ?>

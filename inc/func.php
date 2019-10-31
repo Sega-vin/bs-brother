@@ -83,7 +83,9 @@ function showProductsBlocks($term_id, $taxonomy_model){
 			$machine->the_post();
 			$html .= '<div class="products-items__item">';
 			$html .= '<div class="products-items__img">';
+			$html .= '<a href="'.get_the_permalink().'">';
 			$html .=  kama_thumb_img( 'w=191 &h=146' );
+			$html .= '</a>';
 			$html .= '</div>';
 			$html .= '<div class="products-items__content">';
 			$html .= '<h3 class="products-items__title">';

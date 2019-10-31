@@ -81,6 +81,13 @@ function crb_model_post_options() {
 			              Field::make( 'text', 'td_5_en', __( 'td_5_en' ) )
 			                   ->set_width( 30 ),
 
+			              Field::make( 'text', 'td_6_ro', __( 'td_6_ro' ) )
+			                   ->set_width( 30 ),
+			              Field::make( 'text', 'td_6_ru', __( 'td_6_ru' ) )
+			                   ->set_width( 30 ),
+			              Field::make( 'text', 'td_6_en', __( 'td_6_en' ) )
+			                   ->set_width( 30 ),
+
 		              ) )
 		              ->set_layout( 'tabbed-horizontal' ),
 	         ) );
